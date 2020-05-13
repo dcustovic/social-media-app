@@ -1,7 +1,6 @@
-// constructor function, reusable blueprint
 const validator = require('validator');
 
-
+// constructor function, reusable blueprint
 let User = function(data) {
     this.data = data;
     this.errors = []
@@ -45,12 +44,34 @@ User.prototype.validate = function() {
     }
 }
 
+User.prototype.cleanUp = function() {
+    if (typeof(this.data.username) != "string") {
+        this.data.username = ""
+    }
 
+    if (typeof(this.data.email) != "string") {
+        this.data.email = ""
+    }
+
+    if (typeof(this.data.password) != "string") {
+        this.data.password = ""
+    }
+
+    // purifying data property
+    // no other properties except these
+    // trim() deletes white space
+    this.data = {
+        username: this.data.username.trim(),
+        email: this.data.email.trim().toLowerCase(),
+        password: this.data.password
+    }
+}
 
 User.prototype.register = function() {
-    // Validate user data
-    this.validate()
 
+    // Validate user data
+    this.cleanUp();
+    this.validate();
 }
 
 
