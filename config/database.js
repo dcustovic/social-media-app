@@ -5,10 +5,11 @@ const db = new Sequelize('social-media', 'root', null, {
     dialect: "mysql"
   });
 
-  db.authenticate()
-  .then(function () { 
-    console.log("MySQL connected.")
-    const app = require('../app')
-    const PORT = process.env.PORT || 8080;
-    app.listen(PORT, console.log(`Server connected on ${PORT}.`));
-  }).catch(error => console.log("Error is: " + error));
+
+db.authenticate()
+.then(function() { 
+console.log("MySQL connected.")
+const app = require('../app')
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, console.log(`Server connected on ${PORT}.`));
+}).catch(error => console.log("Error is: " + error));
