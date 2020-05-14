@@ -1,3 +1,5 @@
+const { Sequelize } = require('sequelize');
+const db = require('../config/database');
 const validator = require('validator');
 
 // constructor function, reusable blueprint
@@ -72,6 +74,8 @@ User.prototype.register = function() {
     // Validate user data
     this.cleanUp();
     this.validate();
+
+    // If there are no validation errors then save to database
 }
 
 
