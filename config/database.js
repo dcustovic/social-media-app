@@ -1,15 +1,23 @@
-const { Sequelize } = require('sequelize');
-
-const db = new Sequelize('social-media', 'root', null, {
-    host: '127.0.0.1',
-    dialect: "mysql"
-  });
+const mysql = require('mysql2');
 
 
-db.authenticate()
-.then(function() { 
-console.log("MySQL connected.")
-const app = require('../app')
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, console.log(`Server connected on ${PORT}.`));
-}).catch(error => console.log("Error is: " + error));
+let db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+		password: "",
+		database: "social-media"
+});
+
+db.connect( error => {
+    if (error) {
+      console.log(error)
+    } else {
+			console.log("MySQL connected.")
+			const app = require('../app')
+			const PORT = process.env.PORT || 8080;
+			app.listen(PORT, console.log(`Server connected on ${PORT}.`));
+		}
+});
+
+
+module.exports = db;

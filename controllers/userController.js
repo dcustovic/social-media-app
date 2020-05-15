@@ -1,4 +1,5 @@
-const User = require('../models/User')
+const User = require('../models/User');
+
 
 exports.login = function() {
 
@@ -14,7 +15,7 @@ exports.register = function(req, res) {
     if (user.errors.length) {
         res.send(user.errors)
     } else {
-        res.send("There are no errors.")
+        res.render('register')
     }
 };
 
