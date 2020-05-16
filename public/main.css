@@ -1,6 +1,3 @@
-
-
-
 body, .tooltip
  {
   font-family: 'Poppins', sans-serif;
@@ -49,6 +46,8 @@ body, .tooltip
   position: relative;
   top: -1px;
 }
+
+
 
 .form-control-title {
   font-size: 2rem;
@@ -109,10 +108,26 @@ body, .tooltip
   padding-right: 1rem;
   padding-left: 1rem;
 }
+
+.nav-naslov a{
+  text-decoration: none;
+  color: white;
+  transition: .4s;
+}
+
+.nav-naslov:hover a{
+  color: rgb(255, 166, 0);
+  
+}
+
 .icon {
   margin-top: 11px;
   margin-right: 11px;
   color: gray;
+}
+
+.logo {
+  height: 2.5rem;
 }
 
 .retype-field {
