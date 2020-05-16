@@ -8,6 +8,14 @@ body, .tooltip
   
 }
 
+#footer {
+  position: absolute;
+  width: 100%;
+}
+
+#container {
+  min-height: 70vh;
+}
 
 
 .header-bar {
