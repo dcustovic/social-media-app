@@ -7,13 +7,13 @@
   <title>My Social Media</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/main.css">
 </head>
 <body>
   <header class="header-bar mb-3">
     <div class="container d-flex flex-column flex-md-row align-items-center p-3">
-      <h4 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white">My Social Media</a></h4>
+      <h4 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white">Social Media</a></h4>
       <form action="#" method="POST" class="mb-0 pt-2 pt-md-0">
         <div class="row align-items-center">
           <div class="col-md mr-0 pr-md-0 mb-3 mb-md-0">
@@ -37,7 +37,7 @@
   <div class="row align-items-center">
     <div class="col-lg-7 py-3 py-md-5 mb-5 ">
       <div class="naslov">
-        <h1 class="display-3 text-center">Welcome to<br>My Social Media</h1>      
+        <h1 class="display-3 text-center">My Social Media</h1>      
         <p class="lead text-muted text-center" id="text">Fun social media website where you can connect with your friends, family and loved ones. Create an account, it's totally free, and come join the fun!</p>
       </div>
     </div>
@@ -46,26 +46,26 @@
     <div class="col-lg-5 pl-lg-5 pb-3 py-lg-5 mt-1 mb-5">
       <form action="/register" method="POST" id="registration-form">
           <div class="form-group">
-            <label for="username-register" class="text-muted mb-1"><small>Username</small></label>
+            <i class="fa fa-user icon"></i>
             <input name="username" id="username-register" class="form-control" type="text" placeholder="Pick a username" autocomplete="off">
           </div>
           
           <div class="form-group">
-            <label for="email-register" class="text-muted mb-1"><small>Email</small></label>
-            <input name="email" id="email-register" class="form-control" type="text" placeholder="name@example.com" autocomplete="off">
+            <i class="fas fa-at icon"></i>
+            <input name="email" id="email-register" class="form-control" type="text" placeholder="you@example.com" autocomplete="off">
           </div>
           
           <div class="form-group">
-            <label for="password-register" class="text-muted mb-1"><small>Password</small></label>
+            <i class="fas fa-key icon"></i>
             <input name="password" id="password-register" class="form-control" type="password" placeholder="Create a password">
           </div>
 
           <div class="form-group">
-            <label for="passwordConfirm" class="text-muted mb-1"><small>Confirm Password</small></label>
-            <input name="passwordConfirm" id="passwordConfirm" class="form-control" type="password" placeholder="Retype your password">
+          
+            <input name="passwordConfirm" id="passwordConfirm" class="form-control retype-field" type="password" placeholder="Retype your password">
           </div>
           
-          <button type="submit" class="py-3 mt-4 btn btn-lg btn-warning btn-block">Sign up</button>
+          <button type="submit" id="button-signup" class="py-3 mt-4 btn btn-lg btn-warning  btn-block">Sign up</button>
           
         </form>
     </div>
