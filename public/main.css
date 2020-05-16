@@ -9,17 +9,17 @@ body, .tooltip
 }
 
 #footer {
-  position: absolute;
   width: 100%;
 }
 
 #container {
-  min-height: 70vh;
+  min-height: 72vh;
 }
 
 
 .header-bar {
-  background-color: #292929;
+  background-color: #1b2142f2;
+  box-shadow: 0 0px 170px rgba(17, 42, 189, 0.815);
 }
 
 .container--narrow {
@@ -75,23 +75,23 @@ body, .tooltip
 }
 
 .input-dark {
-  background-color: #444;
+  background-color: rgba(113, 111, 143, 0.507);
   border-color: transparent;
-  color: #FFFFFF;
+  color: rgb(255, 255, 255);
 }
 
 .input-dark:focus {
   color: #FFFFFF;
-  background-color: #555;
+  background-color: rgba(113, 111, 143, 0.507);
   border-color: #80bdff;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
 
-.input-dark::-webkit-input-placeholder {color: #888;}
-.input-dark::-moz-placeholder {color: #888;}
-.input-dark:-ms-input-placeholder {color: #888;}
-.input-dark:-moz-placeholder {color: #888;}
+.input-dark::-webkit-input-placeholder {color: rgb(185, 185, 185);}
+.input-dark::-moz-placeholder {color: rgb(185, 185, 185);}
+.input-dark:-ms-input-placeholder {color: rgb(185, 185, 185);}
+.input-dark:-moz-placeholder {color: rgb(185, 185, 185);}
 
 
 @media (min-width: 768px) {
@@ -109,7 +109,6 @@ body, .tooltip
     font-size: 2.5rem
   }
 
-  
 }
 
 .naslov{
@@ -136,6 +135,11 @@ body, .tooltip
 
 .logo {
   height: 2.5rem;
+}
+
+.logo2 {
+  width: 80%;
+  object-fit: scale-down;
 }
 
 .retype-field {
@@ -187,6 +191,8 @@ textarea.tall-textarea {
     height: 320px;
 
   }
+
+
 
 }
 
@@ -274,7 +280,7 @@ textarea.tall-textarea {
   color: #292929;
 }
 
-@media (min-width: 700px) {
+@media only screen and (min-width: 700px) {
   .live-search-field {
     font-size: 2.5rem;
   }
@@ -287,9 +293,9 @@ textarea.tall-textarea {
     font-size: 3rem;
   }
 
+
+
 }
-
-
 
 .close-live-search:hover {
   opacity: 1;
