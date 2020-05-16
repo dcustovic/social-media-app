@@ -152,7 +152,9 @@ label {
 }
 
 .logo {
-  height: 2.5rem;
+  height: 2rem;
+  padding-right: 0.5rem;
+  
 }
 
 .logo2 {
