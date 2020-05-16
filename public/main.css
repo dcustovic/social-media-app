@@ -24,14 +24,16 @@ label {
 }
 
 .card {
-  background-color: rgba(238, 237, 237, 0.329);
+  background-color: rgba(21, 15, 49, 0.178);
   transition:  0.5s;
 }
 
+/*
 .card:hover {
-  background-color: rgba(92, 92, 165, 0.135);
+  background-color: rgba(206, 117, 0, 0.301);
   opacity: 1;
 }
+*/
 
 .container--narrow {
   max-width: 732px;
