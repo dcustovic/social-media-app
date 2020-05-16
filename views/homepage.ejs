@@ -46,29 +46,33 @@
     </div>
 
 
-    <div class="col-lg-5 pl-lg-5 pb-3 py-lg-5 mt-1">
+    <div class="col-lg-5 px-5 py-5 mt-5 card">
       <form action="/register" method="POST" id="registration-form">
-          <div class="form-group">
-            <i class="fa fa-user icon"></i>
-            <input name="username" id="username-register" class="form-control" type="text" placeholder="Pick a username" autocomplete="off">
-          </div>
+          <label for="username-register" class="text-muted "><i class="fa fa-user icon"></i><small>Username</small></label>
           
           <div class="form-group">
-            <i class="fas fa-at icon"></i>
+            
+            <input name="username" id="username-register" class="form-control" type="text" placeholder="Pick a username" autocomplete="off">
+          </div>
+
+          <label for="username-register" class="text-muted "><i class="fas fa-at icon"></i><small>Email</small></label>
+          <div class="form-group">
+            
             <input name="email" id="email-register" class="form-control" type="text" placeholder="you@example.com" autocomplete="off">
           </div>
           
+          <label for="username-register" class="text-muted "><i class="fas fa-key icon"></i><small>Password</small></label>
           <div class="form-group">
-            <i class="fas fa-key icon"></i>
+            
             <input name="password" id="password-register" class="form-control" type="password" placeholder="Create a password">
           </div>
 
+          <label for="username-register" class="text-muted"><small>Confirm Password</small></label>
           <div class="form-group">
-          
             <input name="passwordConfirm" id="passwordConfirm" class="form-control retype-field" type="password" placeholder="Retype your password">
           </div>
           
-          <button type="submit" id="button-signup" class="py-3 mt-4 btn btn-lg btn-warning  btn-block">Sign up</button>
+          <button type="submit" id="button-signup" class="py-3 mt-4 btn btn-lg btn-warning btn-block">Sign up</button>
           
         </form>
     </div>
