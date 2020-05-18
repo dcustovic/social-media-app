@@ -1,12 +1,14 @@
 const mysql = require('mysql2');
 
-
-let db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
+let options = 
+	{
+		host: "localhost",
+		user: "root",
 		password: "",
 		database: "social-media"
-});
+	}
+
+let db = mysql.createConnection(options);
 
 db.connect( error => {
     if (error) {

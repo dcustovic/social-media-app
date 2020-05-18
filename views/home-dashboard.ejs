@@ -11,32 +11,30 @@
   <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-    <header class="header-bar">
-        <div class="container d-flex flex-column flex-md-row align-items-center p-4">
-          <a href="/"><img class="logo" src="img/logo3.png"></a>
-          <h4 class="my-0 mr-md-auto my-1 nav-naslov"><a href="/">Better than Facebook</a></h4>
-          <form action="/login" method="POST" class="mb-0 pt-2 pt-md-0">
-            <div class="row align-items-center">
-              <div class="col-md mr-0 pr-md-0 mb-3 mb-md-1 ">
-                <input name="email" class="form-control form-control-sm input-dark" type="text" placeholder="Email" autocomplete="off">
-              </div>
-              <div class="col-md mr-0 pr-md-0 mb-3 my-md-1">
-                <input name="password" class="form-control form-control-sm input-dark" type="password" placeholder="Password">
-              </div>
-              <div class="col-md-auto my-1">
-                <button class="btn btn-primary btn-sm">Login</button>
-              </div>
-            </div>
-          </form>      
-        </div>
-      </header>
+  <header class="header-bar">
+    <div class="container d-flex flex-column flex-md-row align-items-center p-4">
+      <a href="/"><img class="logo" src="img/logo3.png"></a>
+      <h4 class="my-0 mr-md-auto my-1 nav-naslov"><a href="/">Better than Facebook</a></h4>
+    
+      <div class="flex-row my-3 my-md-0">
+        <a href="#" class="text-white mr-2 header-search-icon" title="Search" data-toggle="tooltip" data-placement="bottom"><i class="fas fa-search"></i></a>
+        <span class="text-white mr-2 header-chat-icon" title="Chat" data-toggle="tooltip" data-placement="bottom"><i class="fas fa-comment"></i></span>
+        <a href="#" class="mr-2"><img title="My Profile" data-toggle="tooltip" data-placement="bottom" style="width: 32px; height: 32px; border-radius: 16px;" src="https://www.pngfind.com/pngs/m/93-938050_png-file-transparent-white-user-icon-png-download.png"></a>
+        <a class="btn btn-sm btn-success mr-2" href="#">Create Post</a>
+        <form action="/logout" method="POST" class="d-inline">
+          <button class="btn btn-sm btn-secondary">Log Out</button>
+        </form>
+      </div>     
+   
+    </div>
+  </header>
 <!-- header ends here -->
 
 
 <div class="container py-md-5 container--narrow">
     <div class="text-center">
-      <h2>You have been registered.</h2>
-      <p class="lead text-muted">You can now login to your account by clicking the login button at the top right corner of the page.</p>
+      <h2>Hello <strong><%=  %></strong>, your feed is empty.</h2>
+      <p class="lead text-muted">Your feed displays the latest posts from the people you follow. If you don&rsquo;t have any friends to follow, you can use the &ldquo;Search&rdquo; feature in the top menu bar to find content written by people with similar interests and then follow them.</p>
     </div>  
   </div>
   
