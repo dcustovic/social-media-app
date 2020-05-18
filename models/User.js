@@ -82,46 +82,42 @@ User.prototype.cleanUp = function() {
     }
 }
 
-User.prototype.login = function(callback) {
-    this.cleanUp();
+User.prototype.login = function() {
+    return new Promise((resolve, reject) => {
+			this.cleanUp();
 		
-		try {
-			const { email, password } = this.data;
+				const { email, password } = this.data;
 
-			db.query('SELECT * FROM users WHERE email = ?', [email], async (error, results) => {
-				console.log(results);
+				db.query('SELECT * FROM users WHERE email = ?', [email], async (error, results) => {
+					console.log(results);
 
-				if (!results || !(await bcrypt.compare(password, results[0].password))) {
+					if (results == "" || !(await bcrypt.compare(password, results[0].password)) ) {
+						reject("Invalid email or password.")
 
-					callback("email or password incorrect")
-
-				} else {
-
-					callback("login correct")
-
-					/*
-					const id = results[0].id
-					const token = jwt.sign({ id }, process.env.JWT_SECRET, {
-						expiresIn: process.env.JWT_EXPIRES_IN
-					});
-
-					console.log("Token is: " + token)
-
-					const cookieOptions = {
-						expires: new Date(
-							Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
-						),
-						httpOnly: true
+					} else {
+						resolve("You are logged in.")
 					}
-					res.cookie('jwt', token, cookieOptions);
-					res.status(200).redirect('/');
-					*/
-				}
-			});
 
-		} catch (error) {
-			console.log(error)
-		}
+						/*
+						const id = results[0].id
+						const token = jwt.sign({ id }, process.env.JWT_SECRET, {
+							expiresIn: process.env.JWT_EXPIRES_IN
+						});
+
+						console.log("Token is: " + token)
+
+						const cookieOptions = {
+							expires: new Date(
+								Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
+							),
+							httpOnly: true
+						}
+						res.cookie('jwt', token, cookieOptions);
+						res.status(200).redirect('/');
+						*/
+					
+				});
+		});
 }
 
 
