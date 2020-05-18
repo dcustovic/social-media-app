@@ -1,5 +1,9 @@
 const express = require('express');
 const app = express();
+//const dotenv = require('dotenv')
+//const cookieParser = require('cookie-parser');
+
+//dotenv.config({ path: './.env'});
 
 const router = require('./router')
 
@@ -9,6 +13,7 @@ const router = require('./router')
 app.use(express.urlencoded({extended: false}));
 // and also just sending over json data
 app.use(express.json());
+//app.use(cookieParser);
 // tells express to use static files in the folder 'public'
 app.use(express.static('public'));
 

@@ -1,6 +1,8 @@
 const db = require('../config/database');
-const bcrypt = require('bcryptjs');
 const validator = require('validator');
+const bcrypt = require('bcryptjs');
+//const jwt = require('jsonwebtoken');
+
 
 // constructor function, reusable blueprint
 let User = function(data) {
@@ -80,6 +82,49 @@ User.prototype.cleanUp = function() {
     }
 }
 
+User.prototype.login = function(callback) {
+    this.cleanUp();
+		
+		try {
+			const { email, password } = this.data;
+
+			db.query('SELECT * FROM users WHERE email = ?', [email], async (error, results) => {
+				console.log(results);
+
+				if (!results || !(await bcrypt.compare(password, results[0].password))) {
+
+					callback("email or password incorrect")
+
+				} else {
+
+					callback("login correct")
+
+					/*
+					const id = results[0].id
+					const token = jwt.sign({ id }, process.env.JWT_SECRET, {
+						expiresIn: process.env.JWT_EXPIRES_IN
+					});
+
+					console.log("Token is: " + token)
+
+					const cookieOptions = {
+						expires: new Date(
+							Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
+						),
+						httpOnly: true
+					}
+					res.cookie('jwt', token, cookieOptions);
+					res.status(200).redirect('/');
+					*/
+				}
+			});
+
+		} catch (error) {
+			console.log(error)
+		}
+}
+
+
 User.prototype.register = function() {
     // Validate user data
     this.cleanUp();
@@ -89,7 +134,6 @@ User.prototype.register = function() {
     if (!this.errors.length) {
 
 			const { username, email, password } = this.data;
-			
 			console.log(this.data)
 
 			db.query('SELECT email FROM users WHERE email = ?', [email], async () => {
