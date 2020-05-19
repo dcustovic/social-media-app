@@ -6,7 +6,10 @@ body, .tooltip
 #button-signup {
   background-image: linear-gradient(0deg, rgba(255, 153, 0, 0.918), rgb(252, 235, 215));
   width: 100%;
+}
 
+#reg-log-gumb {
+  cursor: default;
 }
 
 #footer {
