@@ -88,7 +88,7 @@ User.prototype.login = function() {
 			if (emailFound && bcrypt.compareSync(this.data.password, emailFound.password)) {
 				resolve("You are logged in.")
 			} else {
-				reject("Invalid email or password.")
+				reject("The email and password you entered did not match. Please double-check and try again.")
 			}
 		}).catch(function() {
 			reject("Please try again later.")
