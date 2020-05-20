@@ -1,25 +1,13 @@
-const mysql = require('mysql2');
+const mongodb = require('mongodb');
+const dotenv = require('dotenv');
+dotenv.config();
 
-let options = 
-	{
-		host: "localhost",
-		user: "root",
-		password: "",
-		database: "social-media"
-	}
+mongodb.connect(process.env.CONNECTIONSTRING, {useNewUrlParser: true, useUnifiedTopology: true}, function(error, client) {
+	// client.db() returns the actual database object
+	module.exports = client;
+	console.log("MongoDB connected.")
 
-let db = mysql.createConnection(options);
-
-db.connect( error => {
-    if (error) {
-      console.log(error)
-    } else {
-			console.log("MySQL connected.")
-			const app = require('../app')
-			const PORT = process.env.PORT || 8080;
-			app.listen(PORT, console.log(`Server connected on ${PORT}.`));
-		}
+	const app = require('../app');
+	app.listen(process.env.PORT);
+	console.log("Server connected on 8080.")
 });
-
-
-module.exports = db;

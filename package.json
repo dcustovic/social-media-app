@@ -19,14 +19,12 @@
   "homepage": "https://github.com/dcustovic/social-media-app#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "cookie-parser": "^1.4.5",
+    "connect-mongo": "^3.2.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.2",
     "express": "^4.17.1",
-    "express-mysql-session": "^2.1.4",
     "express-session": "^1.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mysql2": "^2.1.0",
+    "mongodb": "^3.5.7",
     "validator": "^13.0.0"
   },
   "devDependencies": {
