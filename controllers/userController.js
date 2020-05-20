@@ -9,7 +9,7 @@ exports.login = function(req, res) {
 			res.redirect('/')
 		}) 
 	}).catch(function(reject) {
-		req.flash('errors', reject)
+		req.flash('logErrors', reject)
 		// req.session.flash.errors = [reject]
 		req.session.save(function() {
 			res.redirect('/')
@@ -29,7 +29,12 @@ exports.register = function(req, res) {
 	user.register();
 
 	if (user.errors.length) {
-			res.send(user.errors)
+			user.errors.forEach(function(error) {
+				req.flash('regErrors', error)
+			})
+			req.session.save(function() {
+				res.redirect('/')
+			})
 	} else {
 			res.render('register')
 	}
@@ -39,6 +44,6 @@ exports.home = function(req, res) {
 	if (req.session.user) {
 		res.render('home-dashboard', {name: req.session.user.email})
 	} else {
-		res.render('homepage', {errors: req.flash('errors')})
+		res.render('homepage', {logErrors: req.flash('logErrors'), regErrors: req.flash('regErrors')})
 	}
 };
