@@ -42,10 +42,12 @@ label {
   max-width: 732px;
 }
 
+
 .header-bar {
   background-color: #1b2142f2;
-  box-shadow: 0 0px 170px rgba(17, 42, 189, 0.815);
+  box-shadow: 0 0px 120px rgba(17, 42, 189, 0.815);
 }
+
 
 .header-search-icon {
   position: relative;
