@@ -1,6 +1,7 @@
 const usersCollection = require('../config/database').db().collection('users');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
+const md5 = require('md5');
 
 
 // constructor function, reusable blueprint
@@ -99,6 +100,8 @@ User.prototype.login = function() {
 
 		usersCollection.findOne({username: this.data.username}).then((usernameFound) => {
 			if (usernameFound && bcrypt.compareSync(this.data.password, usernameFound.password)) {
+				this.data = usernameFound
+				this.getAvatar();
 				resolve("You are logged in.")
 			} else {
 				reject("The username and password you entered did not match. Please double-check and try again.")
@@ -121,13 +124,17 @@ User.prototype.register = function() {
 				// hash user password
 				let salt = bcrypt.genSaltSync(10);
 				this.data.password = bcrypt.hashSync(this.data.password, salt);
-	
 				await usersCollection.insertOne(this.data);
+				this.getAvatar();
 				resolve();
 		} else {
 			reject(this.errors);
 		}
 	})
+}
+
+User.prototype.getAvatar = function() {
+	this.avatar = `https://gravatar.com/avatar/${md5(this.data.email)}?s=128`
 }
 
 
