@@ -30,7 +30,7 @@ exports.register = function(req, res) {
 	user.register().then(() => {
 		req.session.user = {username: user.data.username, avatar: user.avatar}
 		req.session.save(function() {
-			res.redirect('/')
+			res.render('register')
 		})
 	}).catch((regErrors) => {
 		regErrors.forEach(function(error) {

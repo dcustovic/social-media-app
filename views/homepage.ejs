@@ -12,9 +12,9 @@
   <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-  <header class="header-bar">
+  <header class="header-bar ">
     <div class="container d-flex flex-column flex-md-row align-items-center p-4">
-      <a href="/"><img class="logo" src="img/logo3.png"></a>
+      <a href="/"><img class="logo " src="img/logo3.png"></a>
       <h4 class="my-0 mr-md-auto my-1 nav-naslov"><a href="/">Better than Facebook</a></h4>
       <form action="/login" method="POST" class="mb-0 pt-2 pt-md-0">
         <div class="row align-items-center">
@@ -34,23 +34,23 @@
 <!-- header ends here -->
 
 
-<div id="container" class="container py-md-5">
+<div id="container" class="container py-md-5 animated fadeIn">
 
   <% logErrors.forEach(function(x) { %>
     <div class="alert alert-danger text-center mt-2"><b><%= x %></b></div>
   <% }) %>
  
-  <div class="row align-items-center text-center mx-auto">
+  <div class="row align-items-center text-center mx-auto animated fadeIn">
     <div class="col-lg-7 py-3 py-md-5 mb-1">
       <img class="logo2" src="img/people.png">
       <div class="naslov ">
         <h1 class="display-3 text-center"></h1>      
-        <p class="lead text-muted text-center " id="text">Fun social media website where you can connect with your friends, family and loved ones. Create an account, it's totally free, and come join the fun!</p>
+        <p class="lead text-muted text-center" id="text">Fun social media website where you can connect with your friends, family and loved ones. Create an account, it's totally free, and come join the fun!</p>
       </div>
     </div>
 
  
-      <div class="col-lg-5 px-5 py-5 mt-5 card wrapper animated fadeInRight">
+      <div class="col-lg-5 px-5 py-5 mt-5 card animated fadeIn">
         <form action="/register" method="POST" id="registration-form">
             
             <% regErrors.forEach(function(x) { %>
