@@ -2,7 +2,7 @@ const usersCollection = require('../config/database').db().collection('users');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const md5 = require('md5');
-
+const nodemailer = require('nodemailer');
 
 // constructor function, reusable blueprint
 let User = function(data) {
@@ -113,7 +113,7 @@ User.prototype.login = function() {
 	});
 }
 
-User.prototype.register = function() {
+User.prototype.register = function(req, res) {
 	return new Promise(async (resolve, reject) => {
 		// Validate user data
 		this.cleanUp();
@@ -125,6 +125,49 @@ User.prototype.register = function() {
 				let salt = bcrypt.genSaltSync(10);
 				this.data.password = bcrypt.hashSync(this.data.password, salt);
 				await usersCollection.insertOne(this.data);
+
+					// Mailing
+					const output = `
+					<h3>Account details</h3>
+					<h4>Better than Facebook</h4>
+					<ul>
+						<li>Username: ${this.data.username}</li>
+						<li>Email: ${this.data.email} </li>
+						<li>Password: ${this.data.password} </li>
+					</ul>
+					<h4>Do not share your private information with anyone.</h4>
+					`
+					let transporter = nodemailer.createTransport({
+						host: 'smtp.gmail.com',
+						secure: false,
+						port: 587,
+						auth: {
+								user: process.env.NAME,
+								pass: process.env.PASSWORD
+						},
+						tls: {
+								rejectUnauthorized: false
+						}
+					});
+
+					let mailOptions = {
+						from: process.env.NAME,
+						to: this.data.email,
+						subject: 'Registration for Better-than-Facebook',
+						text: 'ovo je text koji ce biti prikazan ako nema html',
+						html: output
+					};
+
+					transporter.sendMail(mailOptions, (error, info) => {
+						if (error) {
+							return console.log(error);
+						}
+						console.log("The message was sent!");
+						console.log(info);
+					});
+						// End Mailing
+
+
 				this.getAvatar();
 				resolve();
 		} else {

@@ -37,6 +37,7 @@ exports.register = function(req, res) {
 			req.flash('regErrors', error)
 		})
 		req.session.save(function() {
+			
 			res.redirect('/')
 		})
 	})
