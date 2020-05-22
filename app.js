@@ -4,8 +4,6 @@ const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const app = express();
 
-
-
 let sessionOptions = session({
     secret: "bezveze bezveze",
     store: new MongoStore({client: require('./config/database')}),
@@ -16,6 +14,12 @@ let sessionOptions = session({
 
 app.use(sessionOptions);
 app.use(flash());
+
+app.use(function(req, res, next) {
+    // res.locals = object that will be available within ejs templates
+    res.locals.user = req.session.user
+    next();
+})
 
 const router = require('./router')
 
