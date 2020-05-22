@@ -83,10 +83,11 @@ label {
 }
 
 
-
-.form-control-title {
-  font-size: 2rem;
-  font-weight: 500;
+#post-body {
+  font-size: 17px;
+}
+#post-title {
+  font-size: 17px;
 }
 
 .body-content {
@@ -173,9 +174,7 @@ label {
 
 
 .form-group {
-  display: flex;
-  width: 100%;
-  margin-bottom: 15px;
+
 }
 .form-group:hover {
   color: red;
