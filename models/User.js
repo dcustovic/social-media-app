@@ -5,9 +5,11 @@ const md5 = require('md5');
 const nodemailer = require('nodemailer');
 
 // constructor function, reusable blueprint
-let User = function(data) {
+let User = function(data, getAvatar) {
 	this.data = data;
 	this.errors = []
+	if (getAvatar == undefined) {getAvatar == false}
+	if (getAvatar) {this.getAvatar()}
 }
 
 User.prototype.validate = function() {
