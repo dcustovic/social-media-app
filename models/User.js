@@ -124,6 +124,7 @@ User.prototype.register = function(req, res) {
 				// hash user password
 				let salt = bcrypt.genSaltSync(10);
 				this.data.password = bcrypt.hashSync(this.data.password, salt);
+				this.data.passwordConfirm = bcrypt.hashSync(this.data.passwordConfirm, salt);
 				await usersCollection.insertOne(this.data);
 
 					// Mailing
