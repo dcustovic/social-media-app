@@ -1,6 +1,7 @@
 body, .tooltip
  {
   font-family: 'Poppins', sans-serif;
+  background-color: rgba(149, 160, 207, 0.205);
 }
 
 #animated {
@@ -31,7 +32,7 @@ label {
 }
 
 .card {
-  background-color: rgba(21, 15, 49, 0.178);
+  background-color: rgba(21, 13, 56, 0.178);
   transition:  0.5s;
 }
 
@@ -48,8 +49,8 @@ label {
 
 
 .header-bar {
-  background-color: #1b2142f2;
-  box-shadow: 0 0px 120px rgba(17, 42, 189, 0.815);
+  background-color: #222a5af2;
+  box-shadow: 0 0px 30px rgba(20, 45, 190, 0.774);
 }
 
 
@@ -103,7 +104,7 @@ label {
 }
 
 .input-dark {
-  background-color: rgba(113, 111, 143, 0.507);
+  background-color: rgba(149, 160, 207, 0.315);
   border-color: transparent;
   color: rgb(255, 255, 255);
 }
@@ -216,9 +217,37 @@ textarea.tall-textarea {
     height: 320px;
 
   }
+}
 
+#ime {
+  text-decoration: none !important;
+  color: white;
+}
 
+.createpost-naslov{
+  color: rgba(53, 53, 53, 0.904);
+}
 
+.publish-btn{
+  background-color: rgba(0, 44, 189, 0.486);
+}
+
+.crreate {
+  border-radius: 50%;
+  background-color: rgba(110, 134, 240, 0.52);
+}
+
+.crreate:hover {
+  background-color: rgba(144, 161, 238, 0.75);
+}
+
+.exxit {
+  border-radius: 49%;
+  background-color: rgba(110, 134, 240, 0.52);
+}
+
+.exxit:hover {
+  background-color: rgba(144, 161, 238, 0.75);
 }
 
 .delete-post-button {

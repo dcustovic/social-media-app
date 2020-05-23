@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-  <header class="header-bar">
+  <header class="header-bar text-white">
     <div class="container d-flex flex-column flex-md-row align-items-center p-4">
       <a href="/"><img class="logo" src="img/logo3.png"></a>
       <h4 class="my-0 mr-md-auto my-1 nav-naslov"><a href="/">Better than Facebook</a></h4>
@@ -20,11 +20,11 @@
         <% if (user) { %>
 			<div class="flex-row my-3 my-md-0">
 				<a href="#" class="text-white mr-2 header-search-icon" title="Search" data-toggle="tooltip" data-placement="bottom"><i class="fas fa-search"></i></a>
-				<span class="text-white mr-2 header-chat-icon" title="Chat" data-toggle="tooltip" data-placement="bottom"><i class="fas fa-comment"></i></span>
-				<a href="#" class="mr-2"><img title="My Profile" data-toggle="tooltip" data-placement="bottom" style="width: 32px; height: 32px; border-radius: 16px;" src="<%= user.avatar %>"></a>
-				<a class="btn btn-sm btn-success mr-2" href="/create-post">Create Post</a>
+				<span class="text-white header-chat-icon mr-3" title="Chat" data-toggle="tooltip" data-placement="bottom"><i class="fas fa-comment"></i></span>
+				<a href="#" id="ime" class="mx-3"><img title="My Profile" data-toggle="tooltip" data-placement="bottom" style="width: 32px; height: 32px; border-radius: 50%;" src="<%= user.avatar %>"> <%= user.username %></a>
+				<a class="btn text-white crreate" title="Add post" data-toggle="tooltip" data-placement="bottom"href="/create-post"><i class="fas fa-plus"></i></a>
 				<form action="/logout" method="POST" class="d-inline">
-					<button class="btn btn-sm btn-danger">Log out<i class="fas fa-sign-out-alt ml-2"></i></button>
+					<button class="btn text-white exxit" title="Log out" data-toggle="tooltip" data-placement="bottom"><i class="fas fa-sign-out-alt"></i></button>
 				</form>
 			</div>
 		<% } else { %>
