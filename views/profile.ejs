@@ -38,7 +38,7 @@
 			<% posts.forEach(function(post) {  %>
 				<a href="/post/<%= post._id %>" class="list-group-item list-group-item-action">
 					<div class="d-flex">
-						<img class="avatar-tiny " src="<%= post.author.avatar %>">
+						<img class="avatar-tiny mr-3" src="<%= post.author.avatar %>">
 						<strong><%= post.title %></strong>
 						<div class="ml-auto"><%= post.createdDate.getDate() %>/<%= post.createdDate.getMonth() + 1 %>/<%= post.createdDate.getFullYear() %></div>
 					</div>
