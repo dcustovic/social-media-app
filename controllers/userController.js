@@ -60,3 +60,13 @@ exports.home = function(req, res) {
 		res.render('homepage', {logErrors: req.flash('logErrors'), regErrors: req.flash('regErrors')})
 	}
 };
+
+exports.ifUserExists = function(req, res, next) {
+
+	next();
+}
+
+exports.profilePostsScreen = function(req, res) {
+	
+	res.render('profile')
+}
