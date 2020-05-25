@@ -31,17 +31,6 @@ label {
   
 }
 
-.card {
-  background-color: rgba(21, 13, 56, 0.178);
-  transition:  0.5s;
-}
-
-/*
-.card:hover {
-  background-color: rgba(206, 117, 0, 0.301);
-  opacity: 1;
-}
-*/
 
 .container--narrow {
   max-width: 732px;
@@ -272,9 +261,25 @@ textarea.tall-textarea {
 .card {
   padding-top: 20px;
   margin: 10px 0 20px 0;
-  box-shadow: 0px 0px 4px rgba(95, 95, 95, 0.342);
-  border-radius: 10px;
- 
+  background: linear-gradient( rgba(230, 228, 241, 0.294), rgba(45, 38, 78, 0.075));
+  box-shadow: 0px 2px 5px rgba(95, 95, 95, 0.342);
+  border-radius: 8px;
+}
+
+.karta {
+  background: linear-gradient(rgb(255, 255, 255), rgb(246, 246, 246)) !important;
+}
+
+.kartapost {
+  background: linear-gradient(rgb(255, 255, 255), rgb(246, 246, 246)) !important;
+}
+
+.kartaedit{
+  background: linear-gradient(rgb(255, 255, 255), rgb(246, 246, 246)) !important;
+}
+
+.kartacreate{
+  background: linear-gradient(rgb(255, 255, 255), rgb(246, 246, 246)) !important;
 }
 
 .card.hovercard {
@@ -297,7 +302,7 @@ textarea.tall-textarea {
   margin-bottom: -50px;
 }
 
-.card.hovercard  img {
+.card.hovercard img {
   border-radius: 50%;
   border: 5px solid rgba(255,255,255,0.5);
 }
