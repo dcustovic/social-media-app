@@ -5,7 +5,7 @@ exports.mustBeLoggedIn = function(req, res, next) {
 	if(req.session.user) {
 		next();
 	} else {
-		req.flash('logErrors', "You must be logged in to perform that action.")
+		req.flash('errors', "You must be logged in to perform that action.")
 		req.session.save(function() {
 			res.redirect('/')
 		})
@@ -20,7 +20,7 @@ exports.login = function(req, res) {
 			res.redirect('/')
 		}) 
 	}).catch(function(reject) {
-		req.flash('logErrors', reject)
+		req.flash('errors', reject)
 		// req.session.flash.errors = [reject]
 		req.session.save(function() {
 			res.redirect('/')
@@ -58,7 +58,7 @@ exports.home = function(req, res) {
 	if (req.session.user) {
 		res.render('home-dashboard')
 	} else {
-		res.render('homepage', {logErrors: req.flash('logErrors'), regErrors: req.flash('regErrors')})
+		res.render('homepage', {regErrors: req.flash('regErrors')})
 	}
 };
 

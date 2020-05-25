@@ -1,9 +1,8 @@
 <%- include('partials/header') %>
 
-
 <div id="container" class="container py-md-5 animated fadeIn">
 
-  <% logErrors.forEach(function(x) { %>
+  <% errors.forEach(function(x) { %>
     <div class="alert alert-danger text-center mt-2"><b><%= x %></b></div>
   <% }) %>
  
