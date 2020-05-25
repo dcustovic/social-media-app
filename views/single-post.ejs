@@ -1,9 +1,11 @@
 <%- include('partials/header') %>
   
   <div class="container container--narrow py-md-5  mt-4">
+    <%- include('partials/flash') %>
     <div class="card kartapost">
       <div class="card-body">
-        <div class="d-flex justify-content-between">
+        <a class="font-weight-bold" href="/profile/<%= user.username %>"><i class="fas fa-arrow-circle-left"></i> Back</a>
+        <div class="d-flex justify-content-between mt-4">
           </div>
               <h2><%= post.title %></h2>
               <% if (post.isVisitorOwner) { %>

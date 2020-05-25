@@ -5,9 +5,10 @@
       <div class="col-sm-8">
 
         <%- include('partials/flash') %>
-
+        
         <div class="card kartaedit">
           <div class="card-body">
+            <a class="font-weight-bold" href="/post/<%= postproperty._id %>"><i class="fas fa-arrow-circle-left"></i> Back</a>
             <form action="/post/edit/<%= postproperty._id %>" method="POST">
               <h2 class="text-center mt-3 createpost-naslov">Create Post</h2>
               <label for="post-title" class="text-muted mb-1">Title</label>

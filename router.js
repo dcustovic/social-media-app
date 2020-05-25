@@ -16,8 +16,8 @@ router.get('/profile/:username', userController.ifUserExists, userController.pro
 router.get('/create-post', userController.mustBeLoggedIn, postController.viewCreateScreen);
 router.post('/create-post', userController.mustBeLoggedIn, postController.create);
 router.get('/post/:id', postController.viewSingle);
-router.get('/post/edit/:id', postController.viewEditScreen);
-router.post('/post/edit/:id', postController.edit);
+router.get('/post/edit/:id', userController.mustBeLoggedIn, postController.viewEditScreen);
+router.post('/post/edit/:id', userController.mustBeLoggedIn, postController.edit);
 
 
 
