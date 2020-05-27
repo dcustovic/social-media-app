@@ -1,16 +1,15 @@
 <%- include('partials/header') %>
   
-  <div class="container container--narrow py-md-3 mt-5 post">
+  <div class="container container--narrow py-md-3 mt-4 post">
     <div class="row justify-content-center">
       <div class="col-sm-8">
-
         <%- include('partials/flash') %>
         
         <div class="card kartaedit">
           <div class="card-body">
             <a class="font-weight-bold" href="/post/<%= post._id %>"><i class="fas fa-arrow-circle-left"></i> Back</a>
             <form action="/post/edit/<%= post._id %>" method="POST">
-              <h2 class="text-center mt-3 createpost-naslov">Create Post</h2>
+              <h2 class="text-center mt-3 createpost-naslov">Edit Post</h2>
               <label for="post-title" class="text-muted mb-1">Title</label>
               <div class="form-group">
                 <input required name="title" value="<%= post.title %>" id="post-title" class="form-control form-control-lg form-control-title" type="text" placeholder="What's on your mind?" autocomplete="off">
