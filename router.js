@@ -18,6 +18,7 @@ router.post('/create-post', userController.mustBeLoggedIn, postController.create
 router.get('/post/:id', postController.viewSingle);
 router.get('/post/edit/:id', userController.mustBeLoggedIn, postController.viewEditScreen);
 router.post('/post/edit/:id', userController.mustBeLoggedIn, postController.edit);
+router.post('/post/delete/:id', userController.mustBeLoggedIn, postController.delete);
 
 
 

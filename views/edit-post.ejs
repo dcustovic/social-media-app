@@ -8,17 +8,17 @@
         
         <div class="card kartaedit">
           <div class="card-body">
-            <a class="font-weight-bold" href="/post/<%= postproperty._id %>"><i class="fas fa-arrow-circle-left"></i> Back</a>
-            <form action="/post/edit/<%= postproperty._id %>" method="POST">
+            <a class="font-weight-bold" href="/post/<%= post._id %>"><i class="fas fa-arrow-circle-left"></i> Back</a>
+            <form action="/post/edit/<%= post._id %>" method="POST">
               <h2 class="text-center mt-3 createpost-naslov">Create Post</h2>
               <label for="post-title" class="text-muted mb-1">Title</label>
               <div class="form-group">
-                <input required name="title" value="<%= postproperty.title %>" id="post-title" class="form-control form-control-lg form-control-title" type="text" placeholder="What's on your mind?" autocomplete="off">
+                <input required name="title" value="<%= post.title %>" id="post-title" class="form-control form-control-lg form-control-title" type="text" placeholder="What's on your mind?" autocomplete="off">
               </div>
 
               <label for="post-body" class="text-muted mb-1">Content</label>
               <div class="form-group">
-                <textarea required name="body"  id="post-body" class="form-control body-content tall-textarea" type="text" placeholder="Share your thoughts and opinions..."><%= postproperty.body %></textarea>
+                <textarea required name="body"  id="post-body" class="form-control body-content tall-textarea" type="text" placeholder="Share your thoughts and opinions..."><%= post.body %></textarea>
               </div>
               
               <button class="btn  btn-block mb-2 mt-4 text-white publish-btn">Update Post</button>
