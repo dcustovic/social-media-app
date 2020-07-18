@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 export default class Search {
     // 1. select DOM elements, and keep track of any userful data
     constructor() {
@@ -57,7 +58,7 @@ export default class Search {
 
     renderResultsHTML(posts) {
       if (posts.length) {
-        this.resultsArea.innerHTML = `<div class="list-group shadow-sm">
+        this.resultsArea.innerHTML = DOMPurify.sanitize(`<div class="list-group shadow-sm">
         <div class="list-group-item active"><strong>Search Results</strong> (${posts.length > 1 ? `${posts.length} items found` : '1 item found'})</div>
         
           ${posts.map(post => {
@@ -70,7 +71,7 @@ export default class Search {
             `
           }).join('')}
         
-        </div>`
+        </div>`)
       } else {
           this.resultsArea.innerHTML = `<p class="alert alert-danger text-center shadow-sm">Sorry, couldn't find any results.</p>`
       }
@@ -104,22 +105,22 @@ export default class Search {
     }
 
     injectHTML() {
-      document.body.insertAdjacentHTML('beforeend', ` <div class="search-overlay">
-      <div class="search-overlay-top shadow-sm">
-        <div class="container container--narrow">
-          <label for="live-search-field" class="search-overlay-icon"><i class="fas fa-search"></i></label>
-          <input type="text" id="live-search-field" class="live-search-field" placeholder="What are you interested in?">
-          <span class="close-live-search"><i class="fas fa-times-circle"></i></span>
+      document.body.insertAdjacentHTML('beforeend', `
+      <div class="search-overlay">
+        <div class="search-overlay-top shadow-sm">
+          <div class="container container--narrow">
+            <label for="live-search-field" class="search-overlay-icon"><i class="fas fa-search"></i></label>
+            <input type="text" id="live-search-field" class="live-search-field" placeholder="What are you interested in?">
+            <span class="close-live-search"><i class="fas fa-times-circle"></i></span>
+          </div>
         </div>
-      </div>
-  
-      <div class="search-overlay-bottom">
-        <div class="container container--narrow py-3">
-          <div class="circle-loader"></div>
-          <div class="live-search-results"></div>
+    
+        <div class="search-overlay-bottom">
+          <div class="container container--narrow py-3">
+            <div class="circle-loader"></div>
+            <div class="live-search-results"></div>
+          </div>
         </div>
-      </div>
-    </div>`
-    )
+      </div>`)
     }
 }
