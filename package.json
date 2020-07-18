@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node config/database",
-    "dev": "start nodemon config/database --ignore frontend-js --ignore public/ && start webpack --watch"
+    "watch": "start nodemon config/database --ignore frontend-js --ignore public/ && start webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "dependencies": {
     "@babel/core": "^7.10.1",
     "@babel/preset-env": "^7.10.1",
+    "axios": "^0.19.2",
     "babel-loader": "^8.1.0",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",

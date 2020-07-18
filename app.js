@@ -4,6 +4,8 @@ const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const app = express();
 
+
+
 let sessionOptions = session({
     secret: "bezveze bezveze",
     store: new MongoStore({client: require('./config/database')}),

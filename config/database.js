@@ -1,6 +1,6 @@
 const mongodb = require('mongodb');
 const dotenv = require('dotenv');
-dotenv.config();
+dotenv.config(); // call dotenv
 
 mongodb.connect(process.env.CONNECTIONSTRING, {useNewUrlParser: true, useUnifiedTopology: true}, function(error, client) {
 	// client.db() returns the actual database object
