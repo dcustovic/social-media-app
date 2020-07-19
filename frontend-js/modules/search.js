@@ -58,13 +58,13 @@ export default class Search {
 
     renderResultsHTML(posts) {
       if (posts.length) {
-        this.resultsArea.innerHTML = DOMPurify.sanitize(`<div class="list-group shadow-sm">
-        <div class="list-group-item active"><strong>Search Results</strong> (${posts.length > 1 ? `${posts.length} items found` : '1 item found'})</div>
+        this.resultsArea.innerHTML = (`<div class="list-group shadow-sm">
+        <div class="list-group-item search-nav"><strong>Search Results</strong> (${posts.length > 1 ? `${posts.length} items found` : '1 item found'})</div>
         
           ${posts.map(post => {
             let postDate = new Date(post.createdDate)
             return `
-            <a href="/post/${post._id}" class="list-group-item list-group-item-action">
+            <a href="/post/${post._id}" class="list-group-item single-search-item list-group-item-action">
               <img class="avatar-tiny" src="${post.author.avatar}"> <strong>${post.title}</strong>
               <span class="text-muted small">by ${post.author.username} on ${postDate.getDate()}/${postDate.getMonth() + 1}/${postDate.getFullYear()}</span>
             </a>
@@ -107,11 +107,11 @@ export default class Search {
     injectHTML() {
       document.body.insertAdjacentHTML('beforeend', `
       <div class="search-overlay">
-        <div class="search-overlay-top shadow-sm">
+        <div class="search-overlay-top">
           <div class="container container--narrow">
             <label for="live-search-field" class="search-overlay-icon"><i class="fas fa-search"></i></label>
-            <input type="text" id="live-search-field" class="live-search-field" placeholder="What are you interested in?">
-            <span class="close-live-search"><i class="fas fa-times-circle"></i></span>
+            <input type="text" id="live-search-field" class="live-search-field" placeholder="Find interesting posts...">
+            <span onClick="toggle()" class="close-live-search"><i class="fas fa-times-circle"></i></span>
           </div>
         </div>
     

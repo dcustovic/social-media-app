@@ -13,13 +13,13 @@
 </head>
 <body>
   <header class="header-bar">
-    <div class="container d-flex flex-column flex-md-row align-items-center p-4">
+    <nav class="container d-flex flex-column flex-md-row align-items-center p-4">
       <a href="/"><img class="logo" src="/img/logo3.png"></a>
       <h4 class="my-0 mr-md-auto my-1 nav-naslov"><a href="/">Better than Facebook</a></h4>
     
         <% if (user) { %>
 			<div class="flex-row my-3 my-md-0">
-				<a href="#" class="text-white mr-2 header-search-icon" ><i class="fas fa-search"></i></a>
+				<a href="#" onClick="toggle()" class="text-white mr-2 header-search-icon"><i class="fas fa-search"></i></a>
 				<span class="text-white header-chat-icon mr-3" ><i class="fas fa-comment"></i></span>
 				<a href="/profile/<%= user.username %>" id="ime" class="mx-3"><img class="ime-slika" style="width: 32px; height: 32px; border-radius: 50%;" src="<%= user.avatar %>"> <%= user.username %></a>
 				<a class="btn  crreate" href="/create-post"><i class="fas fa-plus"></i></a>
@@ -42,5 +42,12 @@
 				</div>
             </form>
         <% } %>
-    </div>
+	</nav>
   </header>
+
+<script type="text/javascript">
+  function toggle() {
+	  var blur = document.getElementById('blur');
+	  blur.classList.toggle('active')
+  }
+</script>
