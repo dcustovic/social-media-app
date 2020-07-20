@@ -3,15 +3,14 @@
   <div class="container container--narrow py-md-5 mt-4" id="blur">
     <%- include('partials/flash') %>
     <div class="card kartapost">
-      <div class="card-body ">
-        <a class="font-weight-bold" href="/profile/<%= user.username %>"><i class="fas fa-arrow-circle-left"></i> Back</a>
+      <div class="card-body">
+        <p class="text-muted mb-5">
+          <a href="/profile/<%= post.author.username %>"><img class="avatar-tiny" src="<%= post.author.avatar %>"></a>
+          Posted by <a href="/profile/<%= post.author.username %>"><%= post.author.username %></a> on <%= post.createdDate.getDate() %>/<%= post.createdDate.getMonth() + 1 %>/<%= post.createdDate.getFullYear() %>
+          <a class="font-weight-bold go-back" href="/profile/<%= user.username %>"><i class="fas fa-arrow-circle-left"></i> Back</a>
+        </p>  
         
         <div class="d-flex justify-content-between mt-4">
-          <p class="text-muted small mb-4 ">
-            <a href="#"><img class="avatar-tiny" src="<%= post.author.avatar %>"></a>
-            Posted by <a href="/profile/<%= post.author.username %>"><%= post.author.username %></a> on <%= post.createdDate.getDate() %>/<%= post.createdDate.getMonth() + 1 %>/<%= post.createdDate.getFullYear() %>
-          </p>  
-        
           </div>
               <h2><%= post.title %></h2>
           </div>

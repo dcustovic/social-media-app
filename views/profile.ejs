@@ -10,18 +10,33 @@
 						<div class="avatar">
 							<img class="profile-photo mb-3 mt-4" src="<%= profileAvatar %>">
 						</div>
-							<form action="#" method="POST">
-								<h5><b><%= profileUsername %></b></h5>
-								<div class="info">
-									<div class="desc">Passionate designer</div>
-									<div class="desc">Curious developer</div>
-									<div class="desc">Tech geek</div>
-								</div>
-								<div class="bottom">
-								<button class="btn btn-sm text-white follow-btn mt-2 mb-5">Follow <i class="fas fa-user-plus"></i></button>
-								<!-- <button class="btn btn-danger btn-sm">Stop Following <i class="fas fa-user-times"></i></button> -->
-								</div>
-							</form>
+							<% if (user) {
+								if (isFollowing) { %>
+									<form action="/removeFollow/<%= profileUsername %>" method="POST">
+										<h5><b><%= profileUsername %></b></h5>
+										<div class="info">
+											<div class="desc">Passionate designer</div>
+											<div class="desc">Curious developer</div>
+											<div class="desc">Tech geek</div>
+										</div>
+										<div class="bottom">
+											<button class="btn btn-sm text-white follow-btn mt-2 mb-5">Unfollow <i class="fas fa-user-plus"></i></button>
+										</div>
+									</form>
+								<% } else { %>
+									<form action="/addFollow/<%= profileUsername %>" method="POST">
+										<h5><b><%= profileUsername %></b></h5>
+										<div class="info">
+											<div class="desc">Passionate designer</div>
+											<div class="desc">Curious developer</div>
+											<div class="desc">Tech geek</div>
+										</div>
+										<div class="bottom">
+											<button class="btn btn-sm text-white follow-btn mt-2 mb-5">Follow <i class="fas fa-user-plus"></i></button>
+										</div>
+									</form>
+							<%	}
+							} %>
 				</div>
 			</div>
 		</div>

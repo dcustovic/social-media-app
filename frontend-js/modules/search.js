@@ -40,7 +40,7 @@ export default class Search {
         clearTimeout(this.typingWaitTimer)
         this.showLoaderIcon();
         this.hideResultsArea();
-        this.typingWaitTimer = setTimeout(() => this.sendRequest(), 1000);
+        this.typingWaitTimer = setTimeout(() => this.sendRequest(), 1500);
       }
       this.previousValue = value;
     }
