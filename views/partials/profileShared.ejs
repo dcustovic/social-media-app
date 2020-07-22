@@ -39,7 +39,7 @@
 <hr>
                                                             
 <div class="profile-nav nav nav-tabs nav-justified pt-4">
-    <a href="/profile/<%= profileUsername %>" class="profile-nav-link nav-item nav-link <%= currentPage == 'posts' ? 'active' : '' %>"><i class="fas fa-clipboard mr-2"></i>Posts: 0</a>
-    <a href="/profile/<%= profileUsername %>/followers" class="profile-nav-link nav-item nav-link <%= currentPage == 'followers' ? 'active' : '' %>"><i class="fas fa-users mr-2"></i>Followers: 0</a>
-    <a href="/profile/<%= profileUsername %>/following" class="profile-nav-link nav-item nav-link <%= currentPage == 'following' ? 'active' : '' %>"><i class="far fa-eye mr-2"></i>Following: 0</a>
+    <a href="/profile/<%= profileUsername %>" class="profile-nav-link nav-item nav-link <%= currentPage == 'posts' ? 'active' : '' %>"><i class="fas fa-clipboard mr-2"></i>Posts: <%= counts.postCount %></a>
+    <a href="/profile/<%= profileUsername %>/followers" class="profile-nav-link nav-item nav-link <%= currentPage == 'followers' ? 'active' : '' %>"><i class="fas fa-users mr-2"></i>Followers: <%= counts.followerCount %></a>
+    <a href="/profile/<%= profileUsername %>/following" class="profile-nav-link nav-item nav-link <%= currentPage == 'following' ? 'active' : '' %>"><i class="far fa-eye mr-2"></i>Following: <%= counts.followingCount %></a>
 </div>
