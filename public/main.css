@@ -330,6 +330,17 @@ textarea.tall-textarea {
   border-bottom-left-radius: 4px;
 }
 
+.list-group-item:hover {
+  background-color: #e2e2e22a;
+  box-shadow: inset 1px 6px 7px rgba(116, 116, 117, 0.356);
+}
+
+
+
+
+.profile-nav-link:hover {
+  background-color: rgba(66, 66, 66, 0.144);
+}
 
 /* Search Overaly */
 .search-overlay {
@@ -360,7 +371,7 @@ textarea.tall-textarea {
 
 .search-nav{
   margin-top: 4rem;
-  background-color: rgba(77, 90, 211, 0.895);
+  background-color: rgba(55, 66, 167, 0.895);
   color: white;
   
 }
@@ -469,8 +480,8 @@ textarea.tall-textarea {
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  border: 8px solid rgb(153, 153, 153);
-  border-top-color: #ffffff;
+  border: 8px solid rgb(148, 148, 148);
+  border-top-color: #f5f5f5;
   will-change: -webkit-transform, transform;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
