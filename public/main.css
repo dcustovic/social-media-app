@@ -324,22 +324,21 @@ textarea.tall-textarea {
   margin-bottom: 17px;
 }
 
-.list-group {
+.profile-list-posts-shadow{
   box-shadow: 0px 1px 2px rgba(95, 95, 95, 0.342);
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 4px;
 }
 
-.list-group-item:hover {
-  background-color: #e2e2e22a;
-  box-shadow: inset 1px 6px 7px rgba(116, 116, 117, 0.356);
-}
-
-
-
 
 .profile-nav-link:hover {
   background-color: rgba(66, 66, 66, 0.144);
+}
+
+
+.profile-results:hover {
+  background-color: #e2e2e200;
+  /* box-shadow: inset 1px 6px 7px rgba(116, 116, 117, 0.356); */
 }
 
 /* Search Overaly */
@@ -365,8 +364,8 @@ textarea.tall-textarea {
 }
 
 .single-search-item:hover {
-  background-color: #e2e2e2;
-  box-shadow: inset 1px 6px 7px rgba(116, 116, 117, 0.356);
+  background-color: #e7e5eb;
+  /* box-shadow: inset 1px 6px 7px rgba(116, 116, 117, 0.356); */
 }
 
 .search-nav{
@@ -377,7 +376,7 @@ textarea.tall-textarea {
 }
 
 .search-overlay-top {
-  box-shadow: inset 1px 5px 19px rgba(5, 5, 61, 0.281);
+  box-shadow: inset 0px 2px 12px rgba(5, 5, 61, 0.281);
 }
 
 .search-overlay--visible {

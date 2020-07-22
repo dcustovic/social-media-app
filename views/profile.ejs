@@ -4,9 +4,9 @@
 	<%- include('partials/flash') %>
 	<%- include('partials/profileShared') %>
   
-    <div class="list-group">
+    <div class="list-group profile-list-posts-shadow">
 			<% posts.forEach(function(post) {  %>
-				<a href="/post/<%= post._id %>" class="list-group-item list-group-item-action asd">
+				<a href="/post/<%= post._id %>" class="list-group-item list-group-item-action profile-results">
 					<div class="d-flex">
 						<img class="avatar-tiny mr-3" src="<%= post.author.avatar %>">
 						<strong><%= post.title %></strong>
@@ -14,7 +14,7 @@
 					</div>
 				</a>
 			<% }) %>
-		</div>
+	</div>
 		
   </div>
   

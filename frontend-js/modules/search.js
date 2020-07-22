@@ -65,8 +65,8 @@ export default class Search {
             let postDate = new Date(post.createdDate)
             return `
             <a href="/post/${post._id}" class="list-group-item single-search-item list-group-item-action">
-              <img class="avatar-tiny" src="${post.author.avatar}"> <strong>${post.title}</strong>
-              <span class="text-muted small align-items-end">by ${post.author.username} on ${postDate.getDate()}/${postDate.getMonth() + 1}/${postDate.getFullYear()}</span>
+              <img class="avatar-tiny " src="${post.author.avatar}"> <strong>${post.title}</strong>
+              <span class="text-muted small">by ${post.author.username} on ${postDate.getDate()}/${postDate.getMonth() + 1}/${postDate.getFullYear()}</span>
             </a>
             `
           }).join('')}
