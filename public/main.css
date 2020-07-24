@@ -72,16 +72,20 @@ label {
   top: -1px;
 }
 
-
 #post-body {
   font-size: 17px;
 }
+
 #post-title {
   font-size: 17px;
 }
 
+/* pogledat justify content umjesto margin */
 .go-back {
-  margin-left: 15rem;
+ float: right;
+ margin-left: 2px;
+ color: rgb(52, 106, 255);
+ cursor: pointer;
 }
 
 .body-content {
@@ -324,10 +328,6 @@ textarea.tall-textarea {
   margin-bottom: 17px;
 }
 
-#avatar-dashboard {
-  
-   
-}
 
 .profile-list-posts-shadow{
   box-shadow: 0px 1px 2px rgba(95, 95, 95, 0.342);
@@ -335,6 +335,13 @@ textarea.tall-textarea {
   border-bottom-left-radius: 4px;
 }
 
+.name-dashboard {
+  float: right;
+}
+
+.dashboard-post-body {
+  margin-top: 1rem;
+}
 
 .profile-nav-link:hover {
   background-color: rgba(66, 66, 66, 0.144);

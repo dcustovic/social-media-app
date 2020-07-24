@@ -6,15 +6,17 @@
 
   <% if(posts.length) { %>
     <div class="list-group mt-4">
-      <h2 class="text-center mb-4">Latest News From Your Followers</h2>
+      <h2 class="text-center mb-5">Latest News From Your Followers</h2>
 			<% posts.forEach(function(post) {  %>
-				<a href="/post/<%= post._id %>" class="list-group-item list-group-item-action profile-results mb-2">
-					<div class="">
-            <img class="avatar-small mr-2 mt-2" id="avatar-dashboard" src="<%= post.author.avatar %>">
-						<strong><%= post.title %></strong>
-						<div class="span-info-author-date"> <span class="text-muted small">by <b id="small-name-dashboard"><%= post.author.username %></b> on <%= post.createdDate.getDate() %>/<%= post.createdDate.getMonth() + 1 %>/<%= post.createdDate.getFullYear() %></span></div>
-          </div>
+				<a href="/post/<%= post._id %>" class="list-group-item list-group-item-action profile-results mb-3">
           <hr>
+            <img class="avatar-small mr-2 mt-2" id="avatar-dashboard" src="<%= post.author.avatar %>">
+            <strong><%= post.title %></strong> 
+            <span class="text-muted small name-dashboard">by <b><%= post.author.username %></b> on <%= post.createdDate.getDate() %>/<%= post.createdDate.getMonth() + 1 %>/<%= post.createdDate.getFullYear() %></span>
+            <div class="dashboard-post-body">
+              <%= post.body %>
+            </div>
+            <hr>
 				</a>
 			<% }) %>
 	  </div>
