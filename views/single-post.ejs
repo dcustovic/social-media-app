@@ -5,7 +5,7 @@
     <div class="card kartapost">
       <div class="card-body">
         <p class="text-muted mb-5">
-          <a href="/profile/<%= post.author.username %>"><img class="avatar-tiny" src="<%= post.author.avatar %>"></a>
+          <a href="/profile/<%= post.author.username %>"><img class="avatar-tiny" src=" <%= post.author.avatar %>"></a>
           Posted by <a href="/profile/<%= post.author.username %>"><%= post.author.username %></a> on <%= post.createdDate.getDate() %>/<%= post.createdDate.getMonth() + 1 %>/<%= post.createdDate.getFullYear() %>
           <btn class="font-weight-bold go-back" onClick="history.back()"><i class="fas fa-arrow-circle-left"></i> Go back</btn>
         </p>  
@@ -23,7 +23,8 @@
             <span class="pb-3 px-3">
               <a href="/post/edit/<%= post._id %>" class="btn btn-primary btn-sm mr-1" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i> Edit</a>
               <form class="delete-post-form d-inline" action="/post/delete/<%= post._id %>" method="POST">
-                <btn class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i> Delete</btn>
+                <button class="delete-post-button btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i> Remove</button>
+
               </form>
             </span>
           <% } %>

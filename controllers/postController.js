@@ -78,7 +78,7 @@ exports.delete = function(req, res) {
         req.flash('errors', "You do not have permission to perform that action.")
         req.session.save(() => res.redirect('/'))
     })
-}
+} 
 
 exports.search = function (req, res) {
     Post.search(req.body.searchTerm)
