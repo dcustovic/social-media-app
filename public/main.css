@@ -525,12 +525,12 @@ textarea.tall-textarea {
   right: 20px;
   width: 290px;
   height: 350px;
-  background-color: #FFF;
+  background-color: rgb(233, 229, 243);
   display: flex;
   flex-direction: column;
   transition: all .4s ease-in-out;
   opacity: 0;
-  transform: translateY(100%)
+  transform: translateY(100%);
 }
 
 .chat--visible {
@@ -539,11 +539,13 @@ textarea.tall-textarea {
 }
 
 .chat-title-bar {
-  background-color: #292929;
+  background-color: #2f23a1;
   color: #FFF;
   padding: 4px 7px;
   display: flex;
   justify-content: space-between;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
 }
 
 .chat-title-bar-close {
@@ -621,5 +623,7 @@ textarea.tall-textarea {
   padding: 10px 7px;
   border: none;
   outline: none;
-  font-size: .75rem;
+  font-size: .90rem;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
 }
